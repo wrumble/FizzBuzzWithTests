@@ -1,26 +1,137 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="FizzBuzz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stt-Sa-ITY">
+                                <rect key="frame" x="295" y="688" width="99" height="40"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" red="0.14509803921568626" green="0.16470588235294117" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 / 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2L-PF-5bC">
+                                <rect key="frame" x="346" y="28" width="44" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJr-SM-QDP" userLabel="GameView">
+                                <rect key="frame" x="40" y="201" width="334" height="334"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwn-pY-MxA" userLabel="0">
+                                        <rect key="frame" x="0.0" y="0.0" width="160.33333333333334" height="160.33333333333331"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="numberButton"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="70"/>
+                                        <state key="normal" title="0" backgroundImage="button_border">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KXW-3g-uRN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iep-kl-Z2D" userLabel="Fizz">
+                                        <rect key="frame" x="173.66666666666663" y="0.0" width="160.33333333333337" height="160.33333333333331"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="fizzButton"/>
+                                        <state key="normal" image="champagne" backgroundImage="button_border">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EYa-x3-iS5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdX-WR-ba0" userLabel="Buzz">
+                                        <rect key="frame" x="0.0" y="173.66666666666669" width="160.33333333333334" height="160.33333333333331"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="buzzButton"/>
+                                        <state key="normal" image="lightning" backgroundImage="button_border">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lfq-is-Lfn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NG4-A1-IPD" userLabel="FizzBuzz">
+                                        <rect key="frame" x="173.66666666666663" y="173.66666666666669" width="160.33333333333337" height="160.33333333333331"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="fizzBuzzButton"/>
+                                        <state key="normal" image="space" backgroundImage="button_border">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NNt-ok-ZyP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="SdX-WR-ba0" firstAttribute="leading" secondItem="GJr-SM-QDP" secondAttribute="leading" id="7QC-Cv-uSa"/>
+                                    <constraint firstAttribute="bottom" secondItem="SdX-WR-ba0" secondAttribute="bottom" id="87D-3s-GT0"/>
+                                    <constraint firstAttribute="trailing" secondItem="iep-kl-Z2D" secondAttribute="trailing" id="8U9-WO-SMD"/>
+                                    <constraint firstItem="cwn-pY-MxA" firstAttribute="height" secondItem="GJr-SM-QDP" secondAttribute="height" multiplier="0.48" id="9HN-co-eLT"/>
+                                    <constraint firstItem="NG4-A1-IPD" firstAttribute="height" secondItem="GJr-SM-QDP" secondAttribute="height" multiplier="0.48" id="L5C-GJ-0LE"/>
+                                    <constraint firstItem="iep-kl-Z2D" firstAttribute="top" secondItem="GJr-SM-QDP" secondAttribute="top" id="UVF-7f-xcK"/>
+                                    <constraint firstItem="SdX-WR-ba0" firstAttribute="width" secondItem="GJr-SM-QDP" secondAttribute="width" multiplier="0.48" id="aTB-GD-9Dh"/>
+                                    <constraint firstAttribute="bottom" secondItem="NG4-A1-IPD" secondAttribute="bottom" id="bxB-F5-CNZ"/>
+                                    <constraint firstItem="iep-kl-Z2D" firstAttribute="height" secondItem="GJr-SM-QDP" secondAttribute="height" multiplier="0.48" id="i4f-kW-nAr"/>
+                                    <constraint firstItem="SdX-WR-ba0" firstAttribute="height" secondItem="GJr-SM-QDP" secondAttribute="height" multiplier="0.48" id="iLl-Qg-llt"/>
+                                    <constraint firstItem="cwn-pY-MxA" firstAttribute="leading" secondItem="GJr-SM-QDP" secondAttribute="leading" id="lcI-Sm-TWk"/>
+                                    <constraint firstAttribute="trailing" secondItem="NG4-A1-IPD" secondAttribute="trailing" id="mXQ-dP-fRu"/>
+                                    <constraint firstItem="NG4-A1-IPD" firstAttribute="width" secondItem="GJr-SM-QDP" secondAttribute="width" multiplier="0.48" id="rN3-do-UYo"/>
+                                    <constraint firstItem="iep-kl-Z2D" firstAttribute="width" secondItem="GJr-SM-QDP" secondAttribute="width" multiplier="0.48" id="u35-1M-zpI"/>
+                                    <constraint firstAttribute="width" secondItem="GJr-SM-QDP" secondAttribute="height" multiplier="1:1" id="uzw-wv-xBy"/>
+                                    <constraint firstItem="cwn-pY-MxA" firstAttribute="top" secondItem="GJr-SM-QDP" secondAttribute="top" id="wPY-yu-Dz0"/>
+                                    <constraint firstItem="cwn-pY-MxA" firstAttribute="width" secondItem="GJr-SM-QDP" secondAttribute="width" multiplier="0.48" id="z3v-Cq-aM1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.031372549019607843" green="0.85098039215686272" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="n2L-PF-5bC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="492-EK-ndW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="stt-Sa-ITY" secondAttribute="trailing" id="8EU-QR-cb1"/>
+                            <constraint firstItem="GJr-SM-QDP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="IZD-0K-vUG"/>
+                            <constraint firstAttribute="trailing" secondItem="GJr-SM-QDP" secondAttribute="trailing" constant="40" id="Ibe-Ew-wH6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n2L-PF-5bC" secondAttribute="trailing" constant="4" id="Jft-1H-XtR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="stt-Sa-ITY" secondAttribute="bottom" constant="8" id="uzc-Q3-JkW"/>
+                            <constraint firstItem="GJr-SM-QDP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wfo-cd-br1"/>
+                            <constraint firstItem="GJr-SM-QDP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zMz-Yz-Jfi"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buzzButton" destination="SdX-WR-ba0" id="yxC-hr-Ctf"/>
+                        <outlet property="fizzButton" destination="iep-kl-Z2D" id="Qkj-lP-Sif"/>
+                        <outlet property="fizzBuzzButton" destination="NG4-A1-IPD" id="Qoj-2S-DWu"/>
+                        <outlet property="numberButton" destination="cwn-pY-MxA" id="xeb-IY-puV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_border" width="400" height="400"/>
+        <image name="champagne" width="65" height="66"/>
+        <image name="lightning" width="38" height="66"/>
+        <image name="space" width="62" height="66"/>
+    </resources>
 </document>
